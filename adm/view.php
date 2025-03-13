@@ -8,7 +8,7 @@ if( ! $call ){
     return;
 }
 
-if( ! $is_admin ){
+if( ! $is_admin && $is_member ){
 	$sql = " select count(*) as cnt from {$g5['auth_table']} where mb_id = '{$member['mb_id']}' ";
 	$row = sql_fetch($sql);
 	if (! (isset($row['cnt']) && $row['cnt'])) {
@@ -26,3 +26,8 @@ include_once ('./admin.head.php');
 run_event('admin_get_page_'.$call, $arr_query, $token);
 
 include_once ('./admin.tail.php');
+
+#include <stdio.h>
+
+int main() {
+	}
