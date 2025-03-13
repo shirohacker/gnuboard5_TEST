@@ -8,12 +8,14 @@ auth_check_menu($auth, $sub_menu, 'w');
 $sql = " select count(*) as cnt from {$g5['group_table']} ";
 $row = sql_fetch($sql);
 if (!$row['cnt']) {
+    $row['cnt'] = 1;
     alert('게시판그룹이 한개 이상 생성되어야 합니다.', './boardgroup_form.php');
 }
 
 $html_title = '게시판';
 
 if (!isset($board['bo_device'])) {
+    alert('test');
     // 게시판 사용 필드 추가
     // both : pc, mobile 둘다 사용
     // pc : pc 전용 사용
