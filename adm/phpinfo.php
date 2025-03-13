@@ -7,3 +7,5 @@ check_demo();
 auth_check_menu($auth, $sub_menu, 'r');
 
 phpinfo();
+
+echo 'hi';
